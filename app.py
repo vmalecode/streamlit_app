@@ -8,6 +8,8 @@ att_p = pd.read_csv('data/attending_phy_count.csv', header=0, index_col=0, squee
 att_op = pd.read_csv('data/operating_phy_count.csv', header=0, index_col=0, squeeze = True).to_dict()
 att_ot = pd.read_csv('data/other_phy_count.csv', header=0, index_col=0, squeeze = True).to_dict()
 prv_csv = pd.read_csv('data/provider_phy_count.csv', header=0, index_col=0, squeeze = True).to_dict()
+imgUrl = "https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+
 def convert(att_phy, opr_phy, other_phy):
     phy_total = 0
     if att_phy:
@@ -164,6 +166,7 @@ def app():
                     st.text("Not Fraud")
                 elif clf.predict(data)[0] == 1:
                     st.text("Potential Fraud")
+    st.image(imgUrl, use_column_width="always")
     st.title('Insurance Fraud Detection')
     page = st.sidebar.selectbox('Select page',['CSV','Form']) 
 
