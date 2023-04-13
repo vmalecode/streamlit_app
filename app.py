@@ -58,10 +58,10 @@ def app():
             data = df.loc[:,used_fields]
             data.fillna(0,inplace=True)
         # Use the classifier to predict the entity type
-            df['prediction'] = clf.predict(data)
-        # Display the models prediction
-            fraudulent = df.loc[df['prediction'] == 1, ['claimid', 'prediction']]
-            distribution = df['prediction'].value_counts()
+            df['Potential_Fraud'] = clf.predict(data)
+        # Display the models Potential_Fraud
+            fraudulent = df.loc[df['Potential_Fraud'] == 1, ['claimid', 'Potential_Fraud']]
+            distribution = df['Potential_Fraud'].value_counts()
             plt.rc('text', color='white')
             fig, ax = plt.subplots(facecolor='none')
             ax.pie(distribution, autopct='%1.1f%%')
