@@ -33,7 +33,7 @@ def convert_df_to_csv(df):
   return df.to_csv().encode('utf-8')
 
 # Load the classifier model
-clf = joblib.load('./model/clf1.pkl')
+clf = joblib.load('./model/gbrt991.pkl')
 imgUrl = "https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 # Define the Streamlit app
 st.set_page_config(
