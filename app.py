@@ -49,7 +49,7 @@ def app():
             with open(file_path, 'rb') as f:
                 file_contents = f.read()
             st.download_button(label='Download', data=file_contents, file_name=examples[selected_example])
-        uploaded_file = st.file_uploader("Upload a CSV file with a single row of data", type=["csv"])
+        uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
         used_fields = ['inscclaimamtreimbursed','deductibleamtpaid','gender','race','renaldiseaseindicator','state','county','noofmonths_partacov','noofmonths_partbcov','chroniccond_alzheimer','chroniccond_heartfailure','chroniccond_kidneydisease','chroniccond_cancer','chroniccond_obstrpulmonary','chroniccond_depression','chroniccond_diabetes','chroniccond_ischemicheart','chroniccond_osteoporasis','chroniccond_rheumatoidarthritis','chroniccond_stroke','ipannualreimbursementamt','ipannualdeductibleamt','opannualreimbursementamt','opannualdeductibleamt','inpt','ageatclaim','duration','los','dead','Att_Opr_Oth_Phy_Tot_Claims','Prv_Tot_Att_Opr_Oth_Phys']
         if uploaded_file is not None:
         # Read the CSV file into a DataFrame
